@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+          
+            <h1 class="header">ToDo List</h1>
+            <label class="input-label">What do you want to get done today?</label>
+            <div class="inputboxdiv">
+                <input type="text" id="inputBox" class="input-box" placeholder="E.g. Buy fruits">
+                <button type="button" class="sbmit-btn" onclick="submitRequest()">submit</button>
+            </div>
+            <div class="task-container">
+                <div class="task">
+                    <ul id="list">
+
+                    </ul>
+                </div>
+                <div class="tgl">
+                    <label class="toggle" id="toggle">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                        <span class="labels" data-on="Complete" data-off="Pending"></span>
+                    </label>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./script.js">
+
+
+    </script>
+</body>
+
+</html>

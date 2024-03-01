@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    background-color: plum;
+    background-image: url("./img4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 90px;
+    backdrop-filter:blur(18px);
+}
+
+.header {
+    font-family: "Ojuju", sans-serif;
+    text-align: center;
+    font-size: 100px;
+}
+
+.input-label {
+    font-family: "Ojuju", sans-serif;
+    font-weight: 500;
+    font-size: larger;
+    text-align: center;
+    font-size: 50px;
+}
+.inputboxdiv{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.input-box {
+    font-family: "Ojuju", sans-serif;
+    background: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px 10px 10px 10px; 
+    width: 600px;
+    height: 70px;
+    margin: 20px;
+    font-size: 48px;
+    color: #ABA4A4;
+    outline: none;
+
+}
+.sbmit-btn{
+    font-family: "Ojuju", sans-serif;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.task-container {
+    width: 700px;
+    min-height: 30vh;
+    border: solid 2px pink;
+    margin: 15px;
+    background: white;
+    outline: none;
+    border-radius: 10px 10px 10px 10px;
+    
+}
+
+span {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+#list {
+    margin: 0;
+    padding: 0;
+}
+
+#list li {
+    list-style: none;
+    border: 1px solid pink;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: "Ojuju", sans-serif;
+    font-size: 48px;
+    color: #000000;
+    display: flex;
+    justify-content: space-between; 
+    padding: 2px;
+
+}
+
+
+/* task complete pending button  */
+
+/* styling lable */
+.toggle {
+    --width: 80px;
+    --height: calc(var(--width) / 3);
+
+    position: relative;
+    display: inline-block;
+    width: var(--width);
+    height: var(--height);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    border-radius: var(--height);
+    cursor: pointer;
+}
+
+/* hiding checkbox */
+.toggle input {
+    display: none;
+}
+
+/* Creating slider */
+.toggle .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--height);
+    background-color: #ccc;
+    transition: all 0.4s ease-in-out;
+}
+.toggle .slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--height));
+    height: calc(var(--height));
+    border-radius: calc(var(--height) / 2);
+    background-color: #fff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-in-out;
+}
+
+/* Adding slider effect */
+.toggle input:checked + .slider {
+    background-color: 	#FFFF00;
+}
+.toggle input:checked + .slider::before {
+    transform: translateX(calc(var(--width) - var(--height)));
+}
+/* Adding text in the toggle button */
+.toggle .labels {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    font-weight: 650;
+    font-family: "Ojuju", sans-serif;   
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::after {
+    content: attr(data-off);
+    position: absolute;
+    right: 5px;
+    color: black;
+    opacity: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::before {
+    content: attr(data-on);
+    position: absolute;
+    left: 5px;
+    color: black;
+    opacity: 0;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle input:checked~.labels::after {
+    opacity: 0;
+}
+
+.toggle input:checked~.labels::before {
+    opacity: 1;
+}
